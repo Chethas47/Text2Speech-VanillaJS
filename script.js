@@ -109,6 +109,9 @@ function setTextMessage(text) {
 
 // Speak text
 function speakText() {
+  if (speechSynthesis.speaking){
+    speechSynthesis.cancel();
+  }
   speechSynthesis.speak(message);
 }
 
@@ -140,4 +143,3 @@ readBtn.addEventListener('click', () => {
 });
 
 getVoices();
-
